@@ -1,0 +1,331 @@
+
+%% Copyright 2016 Joshua Downer (joshua.downer@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+
+\documentclass[11pt,a4paper,sans]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+
+% modern themes
+\moderncvstyle{banking}                            % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{blue}                                % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+%\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+%\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
+
+% character encoding
+\usepackage[utf8]{inputenc}                       % if you are not using xelatex ou lualatex, replace by the encoding you are using
+%\usepackage{CJKutf8}                              % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
+
+% adjust the page margins
+\usepackage[scale=0.75]{geometry}
+%\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
+%\setlength{\makecvtitlenamewidth}{10cm}           % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+
+\usepackage{import}
+
+% personal data
+\name{Joshua}{Downer}
+\address{12 Broadway, Stoneham, MA 02180}{}{}% optional, remove / comment the line if not wanted; the "postcode city" and and "country" arguments can be omitted or provided empty
+\phone[mobile]{(781) 462-5809}                   % optional, remove / comment the line if not wanted
+\email{joshua.downer@gmail.com}                               % optional, remove / comment the line if not wanted
+\social[github][github.com/jdowner]{github}
+\social[linkedin][linkedin.com/in/joshuadowner]{linkedin}
+
+% to show numerical labels in the bibliography (default is to show no labels); only useful if you make citations in your resume
+%\makeatletter
+%\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+%\makeatother
+%\renewcommand*{\bibliographyitemlabel}{[\arabic{enumiv}]}% CONSIDER REPLACING THE ABOVE BY THIS
+
+% bibliography with mutiple entries
+%\usepackage{multibib}
+%\newcites{book,misc}{{Books},{Others}}
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+%\begin{CJK*}{UTF8}{gbsn}                          % to typeset your resume in Chinese using CJK
+%-----       resume       ---------------------------------------------------------
+\makecvtitle
+
+\small{An open-source, linux software developer and problem solver. I am
+interested in algorithm development; concurrent, distributed systems; modelling
+and simulation}
+
+\vspace{12pt}
+
+\section{Previous Employment}
+
+\vspace{6pt}
+
+\begin{itemize}
+
+\item{\cventry{July 2014--June 2016}{Senior Software Engineer}{RIFT.io}{Burlington, MA}{}{\vspace{3pt}}}
+
+  Rift.io is building an open-source, Network Function Virtualization (NFV)
+  platform. I originally joined the automation team, which had the mandate to
+  provide the infrastructure for launching and co-ordinating the operation of
+  the various sub-systems that combine to create RIFT.ware.
+
+  \begin{itemize}
+    \item{Designed and implemented manifest generation (python)}
+    \item{Designed and implemented launchpad backend (python, tornado, sqalchemy)}
+    \item{Created the "rift shell" to encapsulate repository/workspace environments (python, bash)}
+    \item{Created prototype IoT application for RIFT.ware (sleekXMPP, ejabberd)}
+  \end{itemize}
+
+  As the company pivoted, I joined the Management and Network Orchestration
+  (MANO) team to help create a system that conformed to the ETSI standard.
+
+  \begin{itemize}
+    \item{Designed and implemented NFVI metrics monitoring (python, asyncio, ceilometer)}
+    \item{Designed and implemented package upload server (python, asyncio, tornado)}
+    \item{Contributed to the Cloud Abstraction Layer (python, vala, yang)}
+    \item{Contributed to cloudsim (using LXC containers instead of VMs to run RIFT.ware) (python, lvm, lxc)}
+  \end{itemize}
+
+\end{itemize}
+
+
+\vspace{6pt}
+
+\begin{itemize}
+
+  \item{\cventry{March 2013--Juky 2014}{Senior Software Engineer}{Bio-Rad DBCC (formerly GnuBio)}{Boston, MA}{}{\vspace{3pt}}}
+
+    GnuBio is creating an integrated, desktop, gene sequencer using cutting-edge
+    emulsion microfluidics. I am primarily responsible for the system that
+    analyzes raw TDI images and determines the spectral composition of drops
+    containing the DNA, which are used to identify genetic targets.
+
+    \begin{itemize}
+      \item{Designed and implemented concurrent, image analysis and processing pipeline (python, C++).}
+      \item{Created a web application to allow biologists to analyze data (python, tornado, rethinkDB).}
+      \item{Created a suite of command line tools to expose image analysis pipeline for bioinformatics developers (bash, python).}
+      \item{Created a flexible regression testing framework (python).}
+      \item{Contributed to the architectural and algorithmic development of the distributed system used to operate the sequencer (python, C/C++, ZeroMQ, ubuntu)}
+      \item{Developed novel peak detection algorithm to identify droplets}
+      \item{Developed linear cluster algorithm for investigating data}
+      \item{Created voxel renderer to view data sets in 3D}
+      \item{Developed algorith to generate probe libraries based on irreducible polynomials}
+    \end{itemize}
+
+
+\end{itemize}
+
+
+\vspace{6pt}
+
+\begin{itemize}
+
+  \item{\cventry{June 2012--March 2013}{Senior Software Design Engineer}{Lantos Technologies}{Boston, MA}{}{\vspace{3pt}}}
+
+    At Lantos I designed and implemented the desktop UI for the Lantos Viewer
+    and contributed to the underlying architecture. I also created a secure web
+    service based upon the 'tornado' framework, which ran on Amazon EC2 linux
+    instances, for distributing scan data between audiologists and hearing aid
+    manufacturers.
+
+    \begin{itemize}
+      \item{Designed and implemented the Lantos Viewer UI (Qml, C++, javascript, Windows 7)}
+      \item{Designed and implemented a secure web service for digital distribution of scan data (tornado (python), SSL/TLS, linux (gentoo), Amazon EC2)}
+      \item{Implemented Windows service for uploading scan data to Lantos cloud (python, Windows 7)}
+      \item{Implemented basic encryption/decryption tools (python, C++)}
+      \item{Designed formal software development process}
+    \end{itemize}
+
+\end{itemize}
+
+
+\vspace{6pt}
+
+\begin{itemize}
+
+  \item{\cventry{March 2011--June 2012}{Senior Software Engineer}{Rethink Robotics (formerly Heartland Robotics)}{}{Boston, MA}{}{\vspace{3pt}}}
+
+    Rethink Robotics is creating the next generation of robots; Robots designed
+    to introduce automation to places where robots have never been used before.
+    At Rethink Robotics I worked primarily on the User Interface (UI) to make
+    robots expressive, informative, and simple to use. The UI was a hyrbid
+    written in Qml and Qt (C++). I integrated the sonar array used for person
+    detection, and created the AI system used to determine features of interest
+    in the robots environment. All development was done on linux (ubuntu and
+    gentoo).
+
+    \begin{itemize}
+      \item{Collaborated on the architectural and functional design of the UI}
+      \item{Integrated sensory systems into the behavioral system behind the UI}
+      \item{Contributed to the design and implementation of the UI front-end}
+    \end{itemize}
+
+\end{itemize}
+
+
+\vspace{6pt}
+
+\begin{itemize}
+
+  \item{\cventry{July 2010--March 2011}{Senior Software Engineer}{Atmospheric and Environmental Research}{}{Lexington, MA}{}{\vspace{3pt}}}
+
+    I was one of the technical leads on the Library Services team on the GOES-R
+    project (NOAA's next generation of weather satellites for launch in 2015),
+    which is responsible for providing C++ infrastructure and utilities to
+    algorithm teams. The GOES-R team at AER, as a subcontractor to Harris
+    Corporation, is responsible for implementing the 'ground segment' software,
+    which processes the satellite data for redistribution.
+
+    \begin{itemize}
+      \item{Designed object oriented utilities and frameworks for the use of downstream, algorithm teams}
+      \item{Created rapid prototypes to promote discussion and gain traction on issues with incomplete information}
+      \item{Evaluated and recommended 3rd party software libraries for inclusion in the project}
+      \item{Established code reviewing and code repository processes}
+      \item{Implemented automatic test-plan generation (python)}
+      \item{Played large role in hiring team members}
+    \end{itemize}
+
+\end{itemize}
+
+
+\vspace{6pt}
+
+\begin{itemize}
+
+  \item{\cventry{May 2008--July 2010}{Senior Software Engineer}{The Mathworks}{}{Natick, MA}{}{\vspace{3pt}}}
+
+    As a member of Unified Editors team I worked extensively on the design and
+    implementation of a C++, Qt-based, cross-platform, 2D graphics framework,
+    used to leverage in-house CMOF technology, and support the next generation
+    of MathWorks editors. The Unified Editors project was a high-profile project
+    within the company, and considered 'mission-critical'.
+
+    \begin{itemize}
+      \item{Designed and implemented event handling system, tool-stack system to support generic operations on diagram elements, syntax highlighting and LaTeX in text elements}
+      \item{Designed and implemented geometry nodes, and rewrote legacy math routines for intersection tests of geometric primitives and arc fitting}
+      \item{Coordinated integration between teams during major revision}
+      \item{Interviewed and evaluated prospective employees}
+      \item{Advocated documentation and unit testing standards}
+    \end{itemize}
+
+
+    Sole responsibility for the Simulink Library Browser. The Library Browser is
+    the main search utility for Simulink and uses a proprietary repository
+    generation and search technology for the blocksets created by internal
+    product teams and customers.
+
+    \begin{itemize}
+      \item{Coordinated with multiple teams (build-and-test, blockset authors, documentation, usability, development)}
+      \item{Worked with application engineers and directly with customers to resolve problems in the field}
+      \item{Refactored legacy code (reduced lines of code by ~7000 lines)}
+      \item{Guided product direction and led design reviews}
+    \end{itemize}
+
+\end{itemize}
+
+
+\vspace{6pt}
+
+\begin{itemize}
+
+\item{\cventry{January 2006--January 2008}{Junior Programmer}{Irrational Games}{}{Quincy, MA}{}{\vspace{3pt}}}
+
+  Contributed to the development of physics-related gameplay systems in the
+  award winning game BioShock
+
+  \begin{itemize}
+    \item{Implemented telekinesis, airblast, and vortex trap plasmids}
+    \item{Designed and implemented 'fatal blow' effects on Havok ragdolls, buoyancy system, and critical message audio system}
+    \item{Contributed to character interaction with environment and tuning ragdoll parameters}
+  \end{itemize}
+
+\end{itemize}
+
+
+\vspace{6pt}
+
+\begin{itemize}
+
+\item{\cventry{2003--2005}{Research Fellow/Instructor}{University of Colorado at Boulder}{}{Boulder, CO}{}{\vspace{3pt}}}
+
+  I Worked in the department of applied mathematics as a research assistant and instructor
+
+  \begin{itemize}
+    \item{Used chemical rate equations to analyze data driven problems in glycolytic pathway}
+    \item{Developed constructive method of enumerating steady-states in rate equations using homotopy continuation theory}
+    \item{Taught introductory classes on differential equations and linear algebra}
+    \item{Downer J, Sevinsky JR, Ahn NG, Resing KA, Betterton MD. "Incorporating expression data in metabolic modeling: a case study of lactate dehydrogenase" Journal of Theoretical Biology, 2006 Jun 7;240(3):464-74. Epub 2005 Dec 2.}
+  \end{itemize}
+
+\end{itemize}
+
+
+\vspace{6pt}
+
+\begin{itemize}
+
+\item{\cventry{2002--2003}{Research Assistant}{European Molecular Biology Laboratory}{}{Rome, Italy}{}{\vspace{3pt}}}
+
+  Worked on purification and structure determination of the VASP protein for crystallographic analysis.
+
+  \begin{itemize}
+    \item{Kursula P, Kursula I, Massimi M, Song YH, Downer J, Stanley WA, Witke W, Wilmanns M. “High-resolution structural analysis of mammalian profilin 2a complex formation with two physiological ligands: the formin homology 1 domain of mDia1 and the proline-rich domain of VASP.” Journal of Molecular Biology, 2008 Jan 4;375(1):270-90}
+  \end{itemize}
+
+\end{itemize}
+
+
+\vspace{12pt}
+
+
+\section{Technical Summary}
+
+\vspace{5pt}
+
+\begin{itemize}
+  \item{Languages: C/C++, python, javascript, Bash, Fortran}
+  \item{Version Control: Git, Subversion, Perforce}
+  \item{Frameworks: protobuf, zeromq, tornado, asyncio, Qt/Qml, STL, boost}
+  \item{Miscellaneous: CMake, GDB, lxc/lxd}
+\end{itemize}
+
+
+\vspace{12pt}
+
+
+\section{Education}
+
+\vspace{5pt}
+
+\begin{itemize}
+  \item{\cventry{1998--2005}{Ph.D. (Mathematics)}{University of Otago}{Dunedin, New Zealand}{}{}}
+  \item{\cventry{1996--1997}{M.Sc. (Zoology, 1st Class)}{University of Auckland}{Auckland, New Zealand}{}{}}
+  \item{\cventry{1993--1995}{B.E. (Engineering Science)}{University of Auckland}{Auckland, New Zealand}{}{}}
+\end{itemize}
+
+\vspace{2pt}
+
+
+
+% Publications from a BibTeX file without multibib
+%  for numerical labels: \renewcommand{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}% CONSIDER MERGING WITH PREAMBLE PART
+%  to redefine the heading string ("Publications"): \renewcommand{\refname}{Articles}
+\nocite{*}
+\bibliographystyle{plain}
+\bibliography{publications}                        % 'publications' is the name of a BibTeX file
+
+% Publications from a BibTeX file using the multibib package
+%\section{Publications}
+%\nocitebook{book1,book2}
+%\bibliographystylebook{plain}
+%\bibliographybook{publications}                   % 'publications' is the name of a BibTeX file
+%\nocitemisc{misc1,misc2,misc3}
+%\bibliographystylemisc{plain}
+%\bibliographymisc{publications}                   % 'publications' is the name of a BibTeX file
+
+%-----       letter       ---------------------------------------------------------
+
+\end{document}
+
+
+%% end of file `resume.tex'.
